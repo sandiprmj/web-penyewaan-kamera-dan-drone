@@ -74,8 +74,8 @@ Proyek ini bertujuan untuk mempermudah proses penyewaan, meningkatkan efisiensi 
 ### 1️ Clone Repository
 
 ```bash
-git clone https://github.com/username/nama-repo.git
-cd nama-repo
+git clone [https://github.com/username/nama-repo.git](https://github.com/sandiprmj/web-penyewaan-kamera-dan-drone.git)
+cd web-penyewaan-kamera-dan-drone
 ```
 
 ### 2️ Install Dependency
