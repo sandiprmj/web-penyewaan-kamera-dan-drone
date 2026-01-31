@@ -1,59 +1,175 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Aplikasi Penyewaan Kamera & Drone
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Laravel • MySQL • Tailwind CSS**
 
-## About Laravel
+### Deskripsi Proyek
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Aplikasi Penyewaan Kamera & Drone adalah sebuah sistem berbasis web yang dibangun menggunakan **Laravel** dan **MySQL** untuk mengelola proses penyewaan alat fotografi seperti kamera dan drone.
+Aplikasi ini menyediakan fitur **login multi-role (Admin & Customer)**, manajemen barang, transaksi penyewaan, konfirmasi pembayaran, serta monitoring status sewa secara real-time.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Proyek ini bertujuan untuk mempermudah proses penyewaan, meningkatkan efisiensi pengelolaan data, dan meminimalkan kesalahan pencatatan secara manual.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Fitur Utama
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Customer
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* Registrasi & Login akun
+* Melihat daftar kamera & drone
+* Melakukan penyewaan barang
+* Memilih tanggal sewa melalui kalender
+* Upload bukti pembayaran
+* Melihat status penyewaan
+* Mendapat notifikasi **“Bukti peminjaman berhasil dibuat”**
 
-## Laravel Sponsors
+### Admin
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+* Dashboard statistik (kamera, drone, customer, transaksi aktif)
+* Manajemen data barang
+* Melihat seluruh transaksi penyewaan
+* Konfirmasi / tolak pembayaran
+* Update status sewa (Belum Diambil, Aktif, Selesai)
+* Menghapus data penyewaan (jika belum aktif/selesai)
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Sistem Role
 
-## Contributing
+* **Admin**
+  Mengelola seluruh data dan transaksi
+* **Customer**
+  Melakukan penyewaan barang
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## Status Penyewaan
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* `belum_diambil`
+* `aktif`
+* `selesai`
 
-## Security Vulnerabilities
+## Status Pembayaran
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+* `pending`
+* `paid`
+* `rejected`
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Teknologi yang Digunakan
+
+* **Laravel** (Backend Framework)
+* **MySQL** (Database)
+* **Tailwind CSS** (UI)
+* **Blade Template Engine**
+* **Vite**
+* **Carbon** (Date & Time)
+* **Authentication Laravel (Breeze)**
+
+---
+
+## Cara Menjalankan Proyek
+
+### 1️ Clone Repository
+
+```bash
+git clone https://github.com/username/nama-repo.git
+cd nama-repo
+```
+
+### 2️ Install Dependency
+
+```bash
+composer install
+npm install
+npm run build
+```
+
+### 3️ Konfigurasi Environment
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+Atur database di file `.env`:
+
+```env
+DB_DATABASE=sewa_kamera
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 4️ Migrasi Database
+
+```bash
+php artisan migrate
+```
+
+### 5 Jalankan npm
+
+```bash
+npm run dev
+```
+
+### 6 Jalankan Server
+
+```bash
+php artisan serve
+```
+
+Akses aplikasi di:
+
+```
+http://localhost:8000
+```
+
+
+---
+
+## Catatan
+
+* Pastikan folder `storage` sudah di-link:
+
+```bash
+php artisan storage:link
+```
+
+* Upload bukti pembayaran disimpan di:
+
+```
+storage/app/public/payment_proofs
+```
+
+---
+
+## Tujuan Proyek
+
+* Sebagai **projek pembelajaran Laravel**
+* Implementasi CRUD, Auth, dan Role Management
+* Cocok untuk **tugas akhir / portofolio**
+
+---
+
+## Pengembang
+
+**Nama:** *SandiPrmj*
+**Framework:** Laravel
+**Tahun:** 2026
+
+---
+
+<img width="1919" height="949" alt="Screenshot 2026-01-31 171205" src="https://github.com/user-attachments/assets/113b57c2-26eb-42bf-821b-bf2213e5fccb" />
+<img width="1919" height="949" alt="Screenshot 2026-01-31 171257" src="https://github.com/user-attachments/assets/46b4a2a4-f363-4093-bcfa-718ab879b6ea" />
+<img width="1919" height="948" alt="Screenshot 2026-01-31 171341" src="https://github.com/user-attachments/assets/a6b25554-ce6b-42b2-8eaf-2fead0b0f782" />
+<img width="1919" height="949" alt="Screenshot 2026-01-31 171544" src="https://github.com/user-attachments/assets/11caad9e-b1b7-486c-a4bf-bdec562ec97a" />
+<img width="1919" height="948" alt="Screenshot 2026-01-31 171607" src="https://github.com/user-attachments/assets/8f6f5eef-453c-452f-bda7-18e8cb6684dc" />
+<img width="1919" height="947" alt="Screenshot 2026-01-31 172056" src="https://github.com/user-attachments/assets/96a568d0-1889-4e76-874e-33aa344dea37" />
+<img width="1919" height="948" alt="Screenshot 2026-01-31 172416" src="https://github.com/user-attachments/assets/c0aa9fd6-1e0f-44cc-b404-4de17f2282eb" />
+<img width="1919" height="946" alt="Screenshot 2026-01-31 172824" src="https://github.com/user-attachments/assets/828e29f0-1b84-4e2f-93d6-0b32d43c32e8" />
+<img width="1919" height="948" alt="Screenshot 2026-01-31 172847" src="https://github.com/user-attachments/assets/f4e9f047-a78b-44c7-8d87-83c829604a74" />
+<img width="1919" height="948" alt="Screenshot 2026-01-31 172906" src="https://github.com/user-attachments/assets/cc55c303-1b7d-4c65-a971-6ff3a758acaa" />
+<img width="1919" height="947" alt="Screenshot 2026-01-31 174648" src="https://github.com/user-attachments/assets/cd0ff5af-9870-48c7-a74b-dbb85f4318f1" />
+<img width="1919" height="948" alt="Screenshot 2026-01-31 174806" src="https://github.com/user-attachments/assets/f0490436-ccda-42e5-a8bd-e4df66203a64" />
+
